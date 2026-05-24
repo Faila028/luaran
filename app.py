@@ -23,6 +23,8 @@ if uploaded_file is not None:
     # =========================
     df = pd.read_excel(uploaded_file)
 
+    st.write(df.columns)
+
     st.subheader("Data Awal")
     st.dataframe(df.head())
 
