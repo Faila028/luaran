@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 # ====================================================
 
 data_barang = pd.read_excel(
-    "PKL UNNES DATA BARANG KELUAR(1).xlsx"
+    "PKL UNNES DATA BARANG KELUAR.xlsx"
 )
 
 # ====================================================
