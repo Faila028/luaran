@@ -65,7 +65,6 @@ if uploaded_file is not None:
     fig, ax = plt.subplots(figsize=(8, 5))
 
     scatter = ax.scatter(
-        fitur_cluster['masuk'],
         fitur_cluster['keluar'],
         c=fitur_cluster['cluster']
     )
