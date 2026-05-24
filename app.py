@@ -34,13 +34,12 @@ if uploaded_file is not None:
     df['tgl_input'] = pd.to_datetime(df['tgl_input'])
 
     # total pergerakan stok
-    df['total_pergerakan'] = df['masuk'] + df['keluar']
+    df['total_pergerakan'] = df['keluar']
 
     # =========================
     # FITUR CLUSTERING
     # =========================
     fitur_cluster = df.groupby('id_produk').agg({
-        'masuk': 'sum',
         'keluar': 'sum',
         'total_pergerakan': 'sum'
     }).reset_index()
@@ -48,7 +47,7 @@ if uploaded_file is not None:
     # scaling
     scaler = StandardScaler()
     scaled_data = scaler.fit_transform(
-        fitur_cluster[['masuk', 'keluar', 'total_pergerakan']]
+        fitur_cluster[['keluar', 'total_pergerakan']]
     )
 
     # =========================
